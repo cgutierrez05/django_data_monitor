@@ -26,7 +26,16 @@ SECRET_KEY = "django-insecure-i(0%ykai=sv@iqtpy=+*67^ngo7z_@v6=-_iasqg&mttwgxxj7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CSRF_TRUSTED_ORIGINS = [
+  "https://*.app.github.dev",
+  "https://localhost:8000",
+  "http://127.0.0.1:8000"
+]
+
+ALLOWED_HOSTS = [
+    "*",
+]
+
 
 
 # Application definition
@@ -122,4 +131,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATIC_URL),
 ]
 
-API_URL = 'https://jsonplaceholder.typicode.com/posts'
+API_URL = 'https://dleo10.pythonanywhere.com/landing/api/index/'
+
+# Fallo: acceso sin autenticación
+LOGIN_URL = '/login/'
+
+# Éxito: luego de autenticación exitosa
+LOGIN_REDIRECT_URL = '/'
