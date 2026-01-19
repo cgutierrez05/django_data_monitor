@@ -1,1 +1,0 @@
-web: gunicorn backend_analytics_server.wsgi --log-file -
